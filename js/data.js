@@ -1287,12 +1287,6 @@ const SERVICES = {
       areas: ALL,
       website: "http://www.servicesaustralia.gov.au/individuals/topics/online-estimators/28456",
       desc: "Estimate payments you may be able to get."
-    },
-    {
-      name: "Update this guide",
-      areas: ALL,
-      email: "ehnetworker@vt.uniting.org",
-      desc: "To include or update information in this resource, contact the Eastern Health Networker."
     }
   ]
 };
