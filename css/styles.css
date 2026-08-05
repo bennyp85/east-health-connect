@@ -1,0 +1,420 @@
+/* =========================================================
+   Community Food & Assistance Guide
+   Mobile-first. Calm, simple — one choice per page.
+   ========================================================= */
+
+/* ===== Base / Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Calm neutrals */
+  --bg: #f4f7f5;
+  --surface: #ffffff;
+  --text: #2f3b36;
+  --text-soft: #5c6b64;
+  --border: #e2e8e4;
+  --accent: #2f8f6b;
+
+  /* Area colours (match the choice buttons) */
+  --c-yarra: #6b4fa0;      /* purple */
+  --c-knox: #b98a3e;       /* tan */
+  --c-boroondara: #8fbf2f; /* yellow-green */
+  --c-monash: #2e6fd8;     /* blue */
+  --c-maroondah: #c44d7f;  /* pink */
+  --c-whitehorse: #3fa9d9; /* light blue */
+  --c-manningham: #4fbf6f; /* green */
+
+  --radius: 16px;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
+  line-height: 1.5;
+  color: var(--text);
+  background-color: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+main {
+  flex: 1;
+}
+
+.container {
+  width: 92%;
+  max-width: 980px;
+  margin: 0 auto;
+}
+
+/* ===== Header (home) ===== */
+.site-header {
+  text-align: center;
+  padding: 2.5rem 0 1.75rem;
+}
+
+.site-kicker {
+  display: inline-block;
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  margin-bottom: 1.1rem;
+}
+
+.site-title {
+  font-size: clamp(1.9rem, 6vw, 3rem);
+  line-height: 1.15;
+  margin-bottom: 0.6rem;
+}
+
+.site-subtitle {
+  font-size: clamp(1.05rem, 3vw, 1.3rem);
+  color: var(--text-soft);
+}
+
+/* ===== Home: the one choice ===== */
+.choice {
+  padding: 1.25rem 0 3rem;
+}
+
+.choice-question {
+  font-size: clamp(1.35rem, 4.5vw, 1.8rem);
+  text-align: center;
+  margin-bottom: 0.5rem;
+}
+
+.choice-hint {
+  text-align: center;
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  margin-bottom: 1.75rem;
+}
+
+.area-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 480px) {
+  .area-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 900px) {
+  /* 4 across the top + 3 across the bottom, like the design */
+  .area-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+.area-card {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  min-height: 100px;
+  padding: 1.25rem 0.75rem;
+  border-radius: var(--radius);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: clamp(1.05rem, 4vw, 1.3rem);
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  border: 2px solid rgba(255, 255, 255, 0.55);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.area-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.14);
+}
+
+.area-card:active {
+  transform: translateY(0) scale(0.97);
+}
+
+.area-card:focus-visible {
+  outline: 4px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Area colours */
+.area-yarra { background-color: var(--c-yarra); color: #fff; }
+.area-knox { background-color: var(--c-knox); color: #33230c; }
+.area-boroondara { background-color: var(--c-boroondara); color: #1f2b05; }
+.area-monash { background-color: var(--c-monash); color: #fff; }
+.area-maroondah { background-color: var(--c-maroondah); color: #fff; }
+.area-whitehorse { background-color: var(--c-whitehorse); color: #0f3447; }
+.area-manningham { background-color: var(--c-manningham); color: #10301e; }
+
+/* ===== Step pages (decision tree) ===== */
+.back-link {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: block;
+  width: 100%;
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+  font-size: 1.1rem;
+  text-decoration: none;
+  padding: 1rem 4%;
+  border-bottom: 1px solid var(--border);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.back-link:hover,
+.back-link:focus-visible {
+  background: #f0f5f2;
+}
+
+.step-hero {
+  text-align: center;
+  padding: 2.5rem 0 1.5rem;
+}
+
+.step-kicker {
+  color: var(--text-soft);
+  font-size: 1.05rem;
+  margin-bottom: 0.3rem;
+}
+
+.step-title {
+  font-size: clamp(2rem, 7vw, 3rem);
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+}
+
+.step-options {
+  padding-bottom: 3rem;
+}
+
+/* Step title colours (also used to accent the choice buttons) */
+.text-yarra { color: var(--c-yarra); --choice-color: var(--c-yarra); }
+.text-knox { color: var(--c-knox); --choice-color: var(--c-knox); }
+.text-boroondara { color: var(--c-boroondara); --choice-color: var(--c-boroondara); }
+.text-monash { color: var(--c-monash); --choice-color: var(--c-monash); }
+.text-maroondah { color: var(--c-maroondah); --choice-color: var(--c-maroondah); }
+.text-whitehorse { color: var(--c-whitehorse); --choice-color: var(--c-whitehorse); }
+.text-manningham { color: var(--c-manningham); --choice-color: var(--c-manningham); }
+
+/* Step: question on a step page */
+.step-question {
+  text-align: left;
+  margin: 0 0 1rem;
+  font-size: clamp(1.2rem, 4vw, 1.5rem);
+}
+
+.step-area-note {
+  margin-top: 0.4rem;
+  color: var(--text-soft);
+  font-size: 1.05rem;
+}
+
+/* Step: the next choice buttons (e.g. the 14 categories on each area page) */
+.step-choice-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 0.85rem;
+}
+
+@media (min-width: 480px) {
+  .step-choice-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+.step-choice {
+  display: flex;
+  align-items: center;
+  text-align: left;
+  min-height: 64px;
+  padding: 0.9rem 1.1rem;
+  border-radius: 12px;
+  background: var(--surface);
+  color: var(--text);
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1.05rem;
+  line-height: 1.3;
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--choice-color, var(--accent));
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+  transition: transform 0.12s ease, box-shadow 0.12s ease;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.step-choice:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.12);
+}
+
+.step-choice:active {
+  transform: scale(0.98);
+}
+
+.step-choice:focus-visible {
+  outline: 4px solid var(--accent);
+  outline-offset: 2px;
+}
+
+/* Placeholder note — replace with real options for each area */
+.placeholder-note {
+  text-align: center;
+  background: var(--surface);
+  border: 2px dashed #c6d3cd;
+  border-radius: var(--radius);
+  padding: 2.5rem 1.5rem;
+  color: var(--text-soft);
+  font-size: 1.1rem;
+}
+
+.placeholder-note p + p {
+  margin-top: 0.4rem;
+}
+
+/* ===== Step: provider / service cards (Level 3) ===== */
+.provider-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+}
+
+@media (min-width: 640px) {
+  .provider-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: start;
+  }
+}
+
+.provider-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-left: 6px solid var(--choice-color, var(--accent));
+  border-radius: 14px;
+  padding: 1.15rem 1.2rem 1.2rem;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.06);
+}
+
+.provider-name {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.18rem;
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.provider-desc {
+  color: var(--text-soft);
+  font-size: 0.98rem;
+  margin-bottom: 0.6rem;
+}
+
+.provider-list {
+  margin: 0 0 0.6rem 1.1rem;
+  color: var(--text);
+  font-size: 0.97rem;
+}
+
+.provider-list li + li {
+  margin-top: 0.2rem;
+}
+
+.provider-detail {
+  display: flex;
+  gap: 0.6rem;
+  align-items: baseline;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  padding-top: 0.4rem;
+  border-top: 1px dashed #e6ece8;
+  margin-top: 0.45rem;
+}
+
+.provider-detail:first-of-type {
+  border-top: none;
+}
+
+.provider-detail .detail-label {
+  flex: 0 0 auto;
+  min-width: 5.6rem;
+  font-weight: 700;
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+.provider-detail a {
+  color: var(--accent);
+  font-weight: 600;
+  text-decoration: none;
+  word-break: break-word;
+}
+
+.provider-detail a:hover,
+.provider-detail a:focus-visible {
+  text-decoration: underline;
+}
+
+.provider-detail .phone-link {
+  color: #1a6d4f;
+  font-size: 1.02rem;
+  font-weight: 700;
+}
+
+.cost-chip {
+  display: inline-block;
+  background: #e7f4ee;
+  color: #1a6d4f;
+  font-size: 0.78rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  padding: 0.18rem 0.6rem;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+/* Emergency call-out (e.g. family violence "000") */
+.provider-card.emergency {
+  border-left-color: #c0392b;
+  background: #fdf3f2;
+}
+
+.provider-card.emergency .provider-name {
+  color: #a93226;
+}
+
+/* ===== Footer ===== */
+.site-footer {
+  background: var(--surface);
+  border-top: 1px solid var(--border);
+  text-align: center;
+  padding: 1.5rem 0;
+  color: var(--text-soft);
+  font-size: 0.95rem;
+}
