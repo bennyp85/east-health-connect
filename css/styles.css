@@ -386,6 +386,12 @@ main {
   font-weight: 700;
 }
 
+/* Address opens Google Maps — always shown as a link */
+.provider-detail .address-link {
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+
 .cost-chip {
   display: inline-block;
   background: #e7f4ee;

@@ -143,7 +143,15 @@
     }
 
     if (s.address) {
-      rows.push('<div class="provider-detail"><span class="detail-label">Address</span><span>' + esc(s.address) + "</span></div>");
+      var mapsUrl =
+        "https://www.google.com/maps/search/?api=1&query=" +
+        encodeURIComponent(s.address);
+      rows.push(
+        '<div class="provider-detail"><span class="detail-label">Address</span>' +
+        '<a class="address-link" href="' + mapsUrl + '" target="_blank" rel="noopener noreferrer" ' +
+        'title="Open in Google Maps" aria-label="Open ' + esc(s.address) + ' in Google Maps">' +
+        esc(s.address) + '&nbsp;↗</a></div>'
+      );
     }
     if (s.phone) {
       rows.push(
