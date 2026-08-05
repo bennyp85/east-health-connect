@@ -992,8 +992,11 @@ const SERVICES = {
     {
       name: "Find a NILS provider",
       areas: ALL,
-      website: "https://goodshep.org.au/services-near-me",
-      desc: "Search for a NILS provider near you."
+      phone: "13 6457",
+      website: "https://nils.com.au/find-a-provider/",
+      desc: "Search for a NILS provider near you, or call 13 NILS (13 6457).",
+      hours: "Mon–Fri 9.00am–4.00pm",
+      cost: "Free"
     }
   ],
 
