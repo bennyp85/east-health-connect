@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Printable A4 reception poster for the Community Food &amp; Assistance Guide." />
+<title>Reception Poster — Community Food &amp; Assistance Guide</title>
+<style>
+  /* =========================================================
+     Reception poster — A4 print-out (not part of the website)
+     Prints exactly one A4 portrait sheet.
+     ========================================================= */
+
+  @page {
+    size: A4 portrait;
+    margin: 0;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html, body {
+    margin: 0;
+    padding: 0;
+    background: #e6eae7;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+
+  .sheet {
+    width: 210mm;
+    height: 297mm;
+    margin: 0 auto;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #2f3b36;
+    box-shadow: 0 4mm 10mm rgba(30, 45, 38, 0.25);
+    overflow: hidden;
+  }
+
+  /* ---- Green header band ---- */
+  .poster-header {
+    background: #2f8f6b;
+    color: #ffffff;
+    text-align: center;
+    padding: 10mm 8mm 8mm;
+  }
+
+  .kicker {
+    display: inline-block;
+    background: rgba(255, 255, 255, 0.22);
+    color: #ffffff;
+    font-weight: 700;
+    font-size: 4.2mm;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    padding: 1.8mm 6mm;
+    border-radius: 999px;
+    margin-bottom: 5mm;
+  }
+
+  h1 {
+    font-size: 13.5mm;
+    line-height: 1.15;
+    font-weight: 800;
+  }
+
+  .subtitle {
+    font-size: 6mm;
+    margin-top: 3.5mm;
+    opacity: 0.96;
+    font-weight: 400;
+  }
+
+  /* ---- QR code section ---- */
+  .qr-wrap {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6mm 10mm;
+  }
+
+  .qr-card {
+    background: #ffffff;
+    border: 1mm solid #cfe3d9;
+    border-radius: 6mm;
+    padding: 6mm;
+    box-shadow: 0 1.5mm 4mm rgba(47, 143, 107, 0.18);
+  }
+
+  .qr-card img {
+    display: block;
+    width: 112mm;
+    height: 112mm;
+  }
+
+  .instruction {
+    margin-top: 8mm;
+    text-align: center;
+    font-size: 7.5mm;
+    font-weight: 700;
+    color: #2f8f6b;
+    letter-spacing: 0.01em;
+  }
+
+  .url {
+    margin-top: 2.5mm;
+    text-align: center;
+    font-size: 6mm;
+    color: #5c6b64;
+    letter-spacing: 0.02em;
+  }
+
+  /* ---- Footer band ---- */
+  .poster-footer {
+    background: #f2f7f4;
+    border-top: 0.5mm solid #d7e6dd;
+    text-align: center;
+    color: #5c6b64;
+    font-size: 4.6mm;
+    line-height: 1.5;
+    padding: 5mm 8mm 6mm;
+  }
+
+  .poster-footer strong { color: #2f8f6b; }
+
+  /* ---- On-screen preview niceties ---- */
+  @media screen and (max-width: 230mm) {
+    body { padding: 8mm 0; }
+  }
+
+  /* ---- Print: one clean sheet, no shadows ---- */
+  @media print {
+    html, body { background: #ffffff; }
+    .sheet {
+      margin: 0;
+      box-shadow: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="sheet">
+    <header class="poster-header">
+      <span class="kicker">Scan me</span>
+      <h1>Community Food<br />&amp; Assistance Guide</h1>
+      <p class="subtitle">Find food and support services in your area</p>
+    </header>
+
+    <div class="qr-wrap">
+      <div class="qr-card">
+        <img src="qr-code.png" alt="QR code. Scan to open east-health-connect.org" />
+      </div>
+      <p class="instruction">Point your phone camera at the QR code</p>
+      <p class="url">east-health-connect.org</p>
+    </div>
+
+    <footer class="poster-footer">
+      <p><strong>Free</strong> to use &middot; <strong>Private</strong> &middot; just a few simple
+      questions to find help near you</p>
+    </footer>
+  </div>
+</body>
+</html>
