@@ -1117,21 +1117,51 @@ const SERVICES = {
   /* ================= HOMELESS ENTRY POINTS ================= */
   "homeless-entry-points": [
     {
-      name: "Homelessness Entry Points — Inner & Outer Eastern Metropolitan Region",
+      name: "Anchor — Homelessness Support (Lilydale)",
       areas: ALL,
-      desc: "Contact an entry point organisation to access homelessness support.",
-      list: [
-        "Anchor Inc. Entry Point",
-        "Community Housing Ltd Entry Point",
-        "The Salvation Army Entry Point",
-        "Uniting Ringwood"
-      ]
+      phone: "9760 6400",
+      address: "Lilydale — serves the Yarra Ranges area",
+      website: "https://anchor.org.au",
+      desc: "Crisis response and homelessness support for individuals and families facing homelessness.",
+      hours: "Mon–Fri 9.00am–5.00pm",
+      cost: "Free",
+      notes: "Opening Doors access point for the Yarra Ranges area."
     },
     {
-      name: "After Hours Support",
+      name: "Community Housing Ltd (Blackburn)",
+      areas: ALL,
+      phone: "9856 0098",
+      address: "Blackburn",
+      website: "https://chl.org.au",
+      desc: "Homelessness entry point and housing support.",
+      hours: "Mon–Fri 9.00am–5.00pm",
+      cost: "Free"
+    },
+    {
+      name: "The Salvation Army — Homelessness East (Nunawading)",
+      areas: ALL,
+      phone: "9890 7144",
+      address: "Level 1, 353 Whitehorse Road, Nunawading VIC 3131",
+      website: "https://www.salvationarmy.org.au",
+      desc: "Homelessness support — intake and assessment for crisis accommodation, rent and referral support.",
+      hours: "Mon–Fri 9.00am–5.00pm",
+      cost: "Free"
+    },
+    {
+      name: "Uniting — Homelessness Crisis Entry Point (Ringwood)",
+      areas: ALL,
+      phone: "8870 4020",
+      address: "291A Maroondah Highway, Ringwood",
+      website: "https://www.unitingvictas.org.au",
+      desc: "Homelessness crisis entry point, crisis accommodation and tenancy support.",
+      hours: "Mon–Fri 9.00am–5.00pm",
+      cost: "Free"
+    },
+    {
+      name: "Statewide After Hours Homelessness Line",
       areas: ALL,
       phone: "1800 825 955",
-      desc: "Statewide homelessness after-hours line.",
+      desc: "After-hours homelessness support — calls outside business hours are diverted to crisis services.",
       hours: "5.00pm–9.00am, weekends & public holidays",
       cost: "Free"
     }
