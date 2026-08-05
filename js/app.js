@@ -221,7 +221,7 @@
           '<h1 class="step-title ' + colorClass + '">' + esc(category.label) + "</h1>" +
           '<p class="step-area-note">in <span>' + esc(area.name) + "</span></p>" +
         "</section>" +
-        '<section class="step-options" aria-label="' + esc(category.label) + ' in ' + esc(area.name) + '">' +
+        '<section class="step-options text-' + esc(area.color) + '" aria-label="' + esc(category.label) + ' in ' + esc(area.name) + '">' +
           body +
         "</section>" +
       "</main>" +
