@@ -83,7 +83,6 @@
         '<div class="container">' +
           '<span class="site-kicker">Community Food &amp; Assistance Guide</span>' +
           '<h1 class="site-title">Do you need help finding food &amp; support?</h1>' +
-          '<p class="site-subtitle">Where will you be going after you leave?</p>' +
         "</div>" +
       "</header>" +
       '<main class="container">' +
