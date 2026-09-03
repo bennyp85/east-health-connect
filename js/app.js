@@ -39,6 +39,15 @@
     }
   }
 
+  /* Footer note inviting users to report any mistakes in the info. */
+  function mistakeNote() {
+    return (
+      '<p class="footer-note">Spotted a mistake in this information? ' +
+      '<a href="mailto:freqtrade888@gmail.com">Email freqtrade888@gmail.com</a> ' +
+      "so I can fix it.</p>"
+    );
+  }
+
   /* ---------- lookups ---------- */
   function areaBySlug(slug) {
     return AREAS.filter(function (a) { return a.slug === slug; })[0];
@@ -73,7 +82,7 @@
       '<header class="site-header">' +
         '<div class="container">' +
           '<span class="site-kicker">Community Food &amp; Assistance Guide</span>' +
-          '<h1 class="site-title">We can help you find food &amp; support</h1>' +
+          '<h1 class="site-title">Do you need help finding food &amp; support?</h1>' +
           '<p class="site-subtitle">Where will you be going after you leave?</p>' +
         "</div>" +
       "</header>" +
@@ -86,13 +95,10 @@
       "</main>" +
       '<footer class="site-footer">' +
         '<div class="container">' +
-          '<p>&copy; <span id="year"></span> Community Food &amp; Assistance Guide</p>' +
           "<p>You can always go back and change your answer.</p>" +
+          mistakeNote() +
         "</div>" +
       "</footer>";
-
-    var yearEl = document.getElementById("year");
-    if (yearEl) yearEl.textContent = new Date().getFullYear();
   }
 
   /* ---------- view: Level 2 (choose a category) ---------- */
@@ -124,6 +130,7 @@
       '<footer class="site-footer">' +
         '<div class="container">' +
           "<p>Press the <strong>Back</strong> button above to change your choice.</p>" +
+          mistakeNote() +
         "</div>" +
       "</footer>";
   }
@@ -236,6 +243,7 @@
       '<footer class="site-footer">' +
         '<div class="container">' +
           "<p>Press the <strong>Back</strong> button above to change your choice.</p>" +
+          mistakeNote() +
         "</div>" +
       "</footer>";
   }
